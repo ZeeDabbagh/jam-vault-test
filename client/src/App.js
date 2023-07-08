@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Signup from './pages/Signup';
+import MediaUpload from './components/MediaUpload'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -38,11 +39,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <MediaUpload/>
         <div className="flex-column justify-flex-start min-100-vh">
           <div className="container">
             <Routes>
               <Route 
-                path="/" 
+                path="/signup" 
                 element={<Signup />} 
               />
             </Routes>
