@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Signup from './pages/Signup';
 import MediaUpload from './components/MediaUpload'
-import NavBar from './components/Navbar';
+import Login from './pages/Login'
 import Header from './components/Header'
 
 // Construct our main GraphQL API endpoint
@@ -49,6 +49,10 @@ function App() {
               <Route 
                 path="/signup" 
                 element={<Signup />} 
+              />
+                            <Route 
+                path="/login" 
+                element={<Login />} 
               />
             </Routes>
           </div>
