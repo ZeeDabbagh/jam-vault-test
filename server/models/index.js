@@ -1,5 +1,5 @@
 const Profile = require('./Profile');
-// const Concert = require('./Concert')
+const Concert = require('./Concert')
 const Post = require('./Post')
 
-module.exports = { Profile, Post };
+module.exports = { Profile, Post, Concert };
