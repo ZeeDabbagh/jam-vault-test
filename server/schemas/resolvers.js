@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
+const { Profile, Concert } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -38,15 +38,18 @@ const resolvers = {
     },
 
 
-    // addPost: async (_, { profileId, title, media}) => {
-    //   return Concert.findOneAndUpdate(
-    //     {_id: profileId},
-    //     {
-    //       $addToSet: { posts: post}
-    //     },
-    //     { new: true}
-    //   )
-    // }
+    addPost: async (_, { profileId, title, media}) => {
+      return Concert.findOneAndUpdate(
+        {_id: profileId},
+        {
+          $addToSet: { posts: {
+            title :title,
+            mediaUrl:media
+          }}
+        },
+        { new: true}
+      )
+    }
 
 
   },
