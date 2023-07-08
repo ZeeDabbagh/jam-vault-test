@@ -40,6 +40,7 @@ const typeDefs = gql`
   type Query {
     profiles: [Profile]
     posts: [Post]
+    concerts: [Concert]
     profile(profileId: ID!): Profile
   }
 
