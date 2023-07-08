@@ -18,6 +18,20 @@ const typeDefs = gql`
     votes: Int
   }
 
+  type Concert {
+    _id: ID
+    title: String
+    date: String
+    location: String
+    artist: String
+    venue: String
+    city: String
+    country: String
+    image: String
+    posts: Post
+    description: String
+  }
+
   type Auth {
     token: ID!
     profile: Profile
