@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Signup from './pages/Signup';
 import MediaUpload from './components/MediaUpload'
 import NavBar from './components/Navbar';
+import Header from './components/Header'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,7 +41,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <NavBar />
+        <Header />
         <MediaUpload/>
         <div className="flex-column justify-flex-start min-100-vh">
           <div className="container">
