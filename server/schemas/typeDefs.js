@@ -9,23 +9,29 @@ const typeDefs = gql`
     skills: [String]!
   }
 
+  type Post {
+    _id: ID
+    title: String
+    content: String
+    media: String
+    profile: Profile
+    votes: Int
+  }
+
   type Auth {
     token: ID!
     profile: Profile
   }
 
   type Query {
-    profiles: [Profile]!
+    profiles: [Profile]
+    posts: [Post]
     profile(profileId: ID!): Profile
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile(profileId: ID!): Profile
-    removeSkill(profileId: ID!, skill: String!): Profile
   }
 `;
 

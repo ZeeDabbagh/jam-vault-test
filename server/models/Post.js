@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose')
+const mongoose = require('mongoose')
 
 const postSchema = new Schema({
     title: {
@@ -15,11 +16,11 @@ const postSchema = new Schema({
         ref: 'User',
         required: true,
     },
-    concert: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Concert',
-        required: true,
-    },
+    // concert: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Concert',
+    //     required: true,
+    // },
     votes: {
         type: Number,
         default: 0
